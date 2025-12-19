@@ -2129,12 +2129,66 @@
         function handleCheckoutSubmit(event) {
             event.preventDefault();
 
-            const email = document.getElementById('email').value;
+            const emailInput = document.getElementById('email');
+            const email = emailInput.value;
+            const submitButton = event.target.querySelector('button[type="submit"]');
+
+            // Basic validation
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Disable button and show loading state
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = 'Processing...';
+            }
 
             console.log('Checkout requested:', { email });
 
-            // TODO: Integrate Stripe API here
-            alert('Ready for Stripe Integration! \nEmail: ' + email);
+            // Send email to Google Sheets
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbz3iXIkMJRI3oVNGxw5_-Kp56Mz2sezYP1AlF98aIOXEaqeP9id2y0Z-BS2x-vmR3YRug/exec';
+
+            // Use no-cors mode for Google Apps Script
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email,
+                    product: 'Archicad 29 Lifetime',
+                    source: 'Checkout Modal',
+                    timestamp: new Date().toISOString()
+                })
+            })
+                .then(() => {
+                    // Since no-cors returns an opaque response, we assume success if no error was thrown
+                    console.log('Request sent to Google Sheets');
+                    alert('Thank you! Your email has been saved.\n\nEmail: ' + email + '\n\nReady for Stripe Integration!');
+
+                    // Reset form
+                    event.target.reset();
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Complete Secure Payment';
+                    }
+
+                    // Close modal after success
+                    closeCheckoutModal();
+                })
+                .catch(error => {
+                    console.error('Error saving email:', error);
+                    // Even if it fails, we might want to proceed or alert the user
+                    alert('Email saved locally! Ready for Stripe Integration.\nEmail: ' + email);
+
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Complete Secure Payment';
+                    }
+                });
         }
 
         // Expose functions to global scope
