@@ -2126,19 +2126,16 @@
             }
         });
 
-    function handleCheckoutSubmit(event) {
-        event.preventDefault();
+            function handleCheckoutSubmit(event) {
+            event.preventDefault();
 
-        const email = document.getElementById('email').value;
-        const submitButton = event.target.querySelector('button[type="submit"]');
+            const email = document.getElementById('email').value;
 
-        // Disable button and show loading state
-        if (submitButton) {
-            submitButton.disabled = true;
-            submitButton.textContent = 'Processing...';
+            console.log('Checkout requested:', { email });
+
+            // TODO: Integrate Stripe API here
+            alert('Ready for Stripe Integration! \nEmail: ' + email);
         }
-
-        console.log('Checkout requested:', { email });
 
         // Send email to Google Sheets
         const scriptURL = 'https://script.google.com/macros/s/AKfycbz3iXIkMJRI3oVNGxw5_-Kp56Mz2sezYP1AlF98aIOXEaqeP9id2y0Z-BS2x-vmR3YRug/exec';
