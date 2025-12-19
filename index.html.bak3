@@ -1904,17 +1904,39 @@
             padding: 20px;
         }
 
-        }
         .modal-container {
             background-color: white;
             width: 100%;
-            max-width: 900px;
+            max-width: 600px;
             border-radius: 16px;
             position: relative;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             animation: modalFadeIn 0.3s ease-out;
-            border: 2px solid rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 
         @keyframes modalFadeIn {
@@ -1947,26 +1969,18 @@
 
         .modal-content {
             display: flex;
-            flex-direction: row;
-            min-height: 500px;
+            flex-direction: column;
+            padding: 55px 40px 40px 40px;
         }
-
-        .modal-left {
-            flex: 1;
-            padding: 50px 40px;
-            background-color: white;
+        .modal-content {
             display: flex;
             flex-direction: column;
-            border-right: 2px solid #e0e0e0;
+            padding: 55px 40px 40px 40px;
         }
-
-        .modal-right {
-            flex: 1;
-            padding: 50px 40px;
-            background-color: #f9fafb;
+        .modal-content {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            padding: 55px 40px 40px 40px;
         }
         .modal-content {
             display: flex;
@@ -2086,9 +2100,7 @@
 
             .form-row {
 
-
-
-        /* Mobile - Stack Vertically */
+        /* Enhanced Mobile Modal Styles */
         @media (max-width: 768px) {
             .modal-overlay {
                 padding: 0;
@@ -2098,25 +2110,26 @@
             .modal-container {
                 max-width: 100%;
                 width: 100%;
-                max-height: 90vh;
+                max-height: 85vh;
                 border-radius: 20px 20px 0 0;
                 overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
             }
 
             .modal-content {
-                flex-direction: column;
-                min-height: auto;
+                padding: 20px;
+                padding-top: 50px;
             }
 
-            .modal-left {
-                border-right: none;
-                border-bottom: 2px solid #e0e0e0;
-                padding: 40px 24px 30px 24px;
+            .modal-left,
+            .modal-right {
+                width: 100%;
+                padding: 0 !important;
             }
 
             .modal-right {
-                padding: 30px 24px 40px 24px;
-                background-color: white;
+                padding: 20px !important;
+                margin-top: 20px;
             }
 
             .close-modal {
@@ -2130,18 +2143,34 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                line-height: 1;
             }
 
             .form-row {
                 flex-direction: column;
                 gap: 12px;
+                margin-bottom: 12px;
+            }
+
+            .form-group {
+                margin-bottom: 0;
             }
 
             .form-group input,
-            .form-group select {
+            .form-group select,
+            .form-group textarea {
                 font-size: 16px !important;
+                padding: 14px !important;
             }
-        }
+
+            .modal-left h2 {
+                font-size: 24px !important;
+            }
+
+            .modal-left p {
+                font-size: 14px !important;
+            }
+
             button[type="submit"] {
                 font-size: 16px !important;
                 padding: 16px !important;
