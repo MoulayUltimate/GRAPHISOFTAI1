@@ -171,6 +171,54 @@
             }
         }
     </style>
+    <style>
+        /* Pricing Split Layout */
+        .pricing-split-container {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .pricing-left-col {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .pricing-divider {
+            width: 1px;
+            background-color: #e0e0e0;
+            margin: 40px 0;
+        }
+
+        .pricing-right-col {
+            flex: 0 0 400px;
+            /* Fixed width for price section */
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media (max-width: 900px) {
+            .pricing-split-container {
+                flex-direction: column-reverse;
+            }
+
+            .pricing-right-col {
+                flex: auto;
+                width: 100%;
+                border-bottom: 1px solid #e0e0e0;
+                padding: 40px;
+            }
+
+            .pricing-divider {
+                display: none;
+            }
+
+            .pricing-left-col {
+                padding: 40px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -369,93 +417,107 @@
 
             <!-- Pricing Card -->
             <div
-                style="max-width: 500px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 24px; padding: 40px; background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                style="max-width: 960px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 24px; background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden;">
 
-                <!-- Card Header: Icons & Title -->
-                <div style="margin-bottom: 24px;">
-                    <div style="display: flex; gap: 8px; margin-bottom: 16px;">
-                        <img src="assets/images/archicad-logo.jpg" alt="Archicad"
-                            style="width: 32px; height: 32px; border-radius: 6px;">
+                <div class="pricing-split-container">
+                    <!-- Left Side: Features & Benefits -->
+                    <div class="pricing-left-col">
+                        <!-- Features List -->
+                        <div style="margin-bottom: 32px;">
+                            <h4 style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 20px;">Key
+                                features:</h4>
+                            <ul
+                                style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+                                <li
+                                    style="display: flex; align-items: start; gap: 12px; font-size: 15px; color: #444; line-height: 1.5;">
+                                    <span style="color: #1a1a1a; font-weight: bold;">•</span>
+                                    One-Time Payment – Fully Activated for Lifetime Access
+                                </li>
+                                <li
+                                    style="display: flex; align-items: start; gap: 12px; font-size: 15px; color: #444; line-height: 1.5;">
+                                    <span style="color: #1a1a1a; font-weight: bold;">•</span>
+                                    Fast email delivery guaranteed
+                                </li>
+                                <li
+                                    style="display: flex; align-items: start; gap: 12px; font-size: 15px; color: #444; line-height: 1.5;">
+                                    <span style="color: #1a1a1a; font-weight: bold;">•</span>
+                                    You'll get a direct download link of the software
+                                </li>
+                                <li
+                                    style="display: flex; align-items: start; gap: 12px; font-size: 15px; color: #444; line-height: 1.5;">
+                                    <span style="color: #1a1a1a; font-weight: bold;">•</span>
+                                    No monthly fees or subscription renewals—one time purchase
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Additional Benefits -->
+                        <div style="margin-bottom: 24px;">
+                            <h4 style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 20px;">
+                                Additional benefits:</h4>
+                            <ul
+                                style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+                                <li
+                                    style="display: flex; align-items: start; gap: 12px; font-size: 15px; color: #444; line-height: 1.5;">
+                                    <span style="color: #1a1a1a; font-weight: bold;">•</span>
+                                    Step-by-Step Installation Video Included via Email
+                                </li>
+                                <li
+                                    style="display: flex; align-items: start; gap: 12px; font-size: 15px; color: #444; line-height: 1.5;">
+                                    <span style="color: #1a1a1a; font-weight: bold;">•</span>
+                                    Warranty & 24/7 Customer Support
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Bottom Link -->
+                        <div style="border-top: 1px solid #eee; padding-top: 24px;">
+                            <a href="#features"
+                                style="font-size: 13px; font-weight: 600; color: #666; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 6px;">
+                                PLAN DETAILS
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                    <h3 style="font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 0 0 8px 0;">Archicad 29
-                        Lifetime</h3>
-                    <div style="font-size: 14px; color: #666;">One-Time Payment – Fully Activated</div>
-                </div>
 
-                <!-- Price -->
-                <div style="margin-bottom: 32px;">
-                    <div style="font-size: 14px; color: #666; margin-bottom: 4px;">Starting from</div>
-                    <div style="display: flex; align-items: baseline; gap: 10px;">
-                        <span style="font-size: 42px; font-weight: 800; color: #1a1a1a;">$79</span>
-                        <span style="font-size: 16px; color: #999; text-decoration: line-through;">$1,995</span>
+                    <!-- Divider -->
+                    <div class="pricing-divider"></div>
+
+                    <!-- Right Side: Product & Price -->
+                    <div class="pricing-right-col">
+                        <!-- Card Header: Icons & Title -->
+                        <div style="margin-bottom: 24px;">
+                            <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+                                <img src="assets/images/archicad-logo.jpg" alt="Archicad"
+                                    style="width: 48px; height: 48px; border-radius: 8px;">
+                            </div>
+                            <h3 style="font-size: 28px; font-weight: 700; color: #1a1a1a; margin: 0 0 8px 0;">Archicad
+                                29 Lifetime</h3>
+                            <div style="font-size: 15px; color: #666;">One-Time Payment – Fully Activated</div>
+                        </div>
+
+                        <!-- Price -->
+                        <div style="margin-bottom: 32px;">
+                            <div style="font-size: 15px; color: #666; margin-bottom: 4px;">Starting from</div>
+                            <div style="display: flex; align-items: baseline; gap: 12px;">
+                                <span
+                                    style="font-size: 56px; font-weight: 800; color: #1a1a1a; line-height: 1;">$79</span>
+                                <span style="font-size: 20px; color: #999; text-decoration: line-through;">$1,995</span>
+                            </div>
+                            <div style="font-size: 14px; color: #666; margin-top: 8px;">+ tax / lifetime license</div>
+                        </div>
+
+                        <!-- CTA Button -->
+                        <button onclick="openPurchaseModal()"
+                            style="width: 100%; background-color: #1a1a1a; color: white; border: none; padding: 18px; border-radius: 50px; font-weight: 700; font-size: 15px; letter-spacing: 1px; cursor: pointer; transition: transform 0.2s, background 0.2s; text-transform: uppercase; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+                            onmouseover="this.style.transform='translateY(-2px)'; this.style.backgroundColor='#000';"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.backgroundColor='#1a1a1a';">
+                            GET IT NOW
+                        </button>
                     </div>
-                    <div style="font-size: 13px; color: #666; margin-top: 4px;">+ tax / lifetime license</div>
-                </div>
-
-                <!-- CTA Button -->
-                <button onclick="openPurchaseModal()"
-                    style="width: 100%; background-color: #2b2b2b; color: white; border: none; padding: 16px; border-radius: 50px; font-weight: 700; font-size: 14px; letter-spacing: 1px; cursor: pointer; transition: background 0.2s; text-transform: uppercase; margin-bottom: 32px;">
-                    GET IT NOW
-                </button>
-
-                <!-- Features List -->
-                <div style="margin-bottom: 24px;">
-                    <h4 style="font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 16px;">Key features:
-                    </h4>
-                    <ul
-                        style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
-                        <li
-                            style="display: flex; align-items: start; gap: 10px; font-size: 14px; color: #444; line-height: 1.5;">
-                            <span style="color: #1a1a1a; font-weight: bold;">•</span>
-                            One-Time Payment – Fully Activated for Lifetime Access
-                        </li>
-                        <li
-                            style="display: flex; align-items: start; gap: 10px; font-size: 14px; color: #444; line-height: 1.5;">
-                            <span style="color: #1a1a1a; font-weight: bold;">•</span>
-                            Fast email delivery guaranteed
-                        </li>
-                        <li
-                            style="display: flex; align-items: start; gap: 10px; font-size: 14px; color: #444; line-height: 1.5;">
-                            <span style="color: #1a1a1a; font-weight: bold;">•</span>
-                            You’ll get a direct download link of the software
-                        </li>
-                        <li
-                            style="display: flex; align-items: start; gap: 10px; font-size: 14px; color: #444; line-height: 1.5;">
-                            <span style="color: #1a1a1a; font-weight: bold;">•</span>
-                            No monthly fees or subscription renewals—one time purchase
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Additional Benefits -->
-                <div style="margin-bottom: 32px;">
-                    <h4 style="font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 16px;">Additional
-                        benefits:</h4>
-                    <ul
-                        style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
-                        <li
-                            style="display: flex; align-items: start; gap: 10px; font-size: 14px; color: #444; line-height: 1.5;">
-                            <span style="color: #1a1a1a; font-weight: bold;">•</span>
-                            Step-by-Step Installation Video Included via Email
-                        </li>
-                        <li
-                            style="display: flex; align-items: start; gap: 10px; font-size: 14px; color: #444; line-height: 1.5;">
-                            <span style="color: #1a1a1a; font-weight: bold;">•</span>
-                            Warranty & 24/7 Customer Support
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Bottom Link -->
-                <div style="border-top: 1px solid #eee; padding-top: 20px;">
-                    <a href="#features"
-                        style="font-size: 12px; font-weight: 600; color: #666; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 6px;">
-                        PLAN DETAILS
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </a>
                 </div>
 
             </div>
@@ -1905,11 +1967,13 @@
         }
 
         }
+
         /* --- MODAL REDESIGN (Two-Column) --- */
         .modal-container {
             background-color: white;
             width: 100%;
-            max-width: 900px; /* Wider for two columns */
+            max-width: 900px;
+            /* Wider for two columns */
             border-radius: 16px;
             position: relative;
             overflow: hidden;
@@ -1920,9 +1984,11 @@
 
         .modal-content {
             display: flex;
-            flex-direction: row; /* Side by side */
+            flex-direction: row;
+            /* Side by side */
             min-height: 500px;
-            padding: 0; /* Reset padding */
+            padding: 0;
+            /* Reset padding */
         }
 
         .modal-left {
@@ -1931,13 +1997,15 @@
             background-color: white;
             display: flex;
             flex-direction: column;
-            border-right: 1px solid #e0e0e0; /* Vertical Divider */
+            border-right: 1px solid #e0e0e0;
+            /* Vertical Divider */
         }
 
         .modal-right {
             flex: 1;
             padding: 50px 40px;
-            background-color: #f9fafb; /* Slight grey background for form */
+            background-color: #f9fafb;
+            /* Slight grey background for form */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -1947,7 +2015,8 @@
         @media (max-width: 768px) {
             .modal-overlay {
                 padding: 0;
-                align-items: flex-end; /* Bottom sheet */
+                align-items: flex-end;
+                /* Bottom sheet */
             }
 
             .modal-container {
@@ -1959,12 +2028,14 @@
             }
 
             .modal-content {
-                flex-direction: column; /* Stack vertically */
+                flex-direction: column;
+                /* Stack vertically */
             }
 
             .modal-left {
                 border-right: none;
-                border-bottom: 1px solid #e0e0e0; /* Horizontal Divider */
+                border-bottom: 1px solid #e0e0e0;
+                /* Horizontal Divider */
                 padding: 30px 24px;
             }
 
@@ -1972,11 +2043,11 @@
                 padding: 30px 24px 50px 24px;
                 background-color: white;
             }
-            
+
             .close-modal {
                 top: 15px;
                 right: 15px;
-                background: rgba(255,255,255,0.9);
+                background: rgba(255, 255, 255, 0.9);
                 width: 40px;
                 height: 40px;
                 border-radius: 50%;
@@ -1987,28 +2058,28 @@
         }
     </style>
 
-        /* Better Form Label Visibility */
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-size: 14px;
-            color: #1a1a1a;
-        }
+    /* Better Form Label Visibility */
+    .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1a1a1a;
+    }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+    .form-group {
+    margin-bottom: 20px;
+    }
 
-        .modal-left h2 {
-            margin-top: 0;
-            margin-bottom: 12px;
-        }
+    .modal-left h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    }
 
-        .modal-left > p {
-            margin-top: 0;
-            margin-bottom: 24px;
-        }
+    .modal-left > p {
+    margin-top: 0;
+    margin-bottom: 24px;
+    }
 
     <script>
         // Ensure modal is hidden on load
@@ -2075,89 +2146,91 @@
 
 </html><!-- FORCE UPDATE -->
 <style>
+    /* --- REDESIGNED EMAIL INPUT --- */
+    .modal-left form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
 
-        /* --- REDESIGNED EMAIL INPUT --- */
-        .modal-left form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
+    .form-group {
+        width: 100%;
+        max-width: 380px;
+        /* Optimal reading width */
+        text-align: center;
+        margin-bottom: 24px;
+    }
 
-        .form-group {
-            width: 100%;
-            max-width: 380px; /* Optimal reading width */
-            text-align: center;
-            margin-bottom: 24px;
-        }
+    .form-group label {
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #666;
+        margin-bottom: 12px;
+    }
 
-        .form-group label {
-            display: block;
-            text-align: center;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #666;
-            margin-bottom: 12px;
-        }
+    .form-group input {
+        width: 100%;
+        text-align: center;
+        /* Center text inside */
+        background-color: #f5f5f5;
+        border: 2px solid #f5f5f5;
+        padding: 18px;
+        font-size: 16px;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+        color: #1a1a1a;
+    }
 
-        .form-group input {
-            width: 100%;
-            text-align: center; /* Center text inside */
-            background-color: #f5f5f5;
-            border: 2px solid #f5f5f5;
-            padding: 18px;
-            font-size: 16px;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.03);
-            color: #1a1a1a;
-        }
+    .form-group input:focus {
+        background-color: white;
+        border-color: #1a1a1a;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        outline: none;
+    }
 
-        .form-group input:focus {
-            background-color: white;
-            border-color: #1a1a1a;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            outline: none;
-        }
+    .form-group input::placeholder {
+        color: #bbb;
+        font-weight: 400;
+    }
 
-        .form-group input::placeholder {
-            color: #bbb;
-            font-weight: 400;
-        }
-
-        /* Button Adjustment */
-        button[type="submit"] {
-            max-width: 380px;
-            padding: 18px;
-            font-size: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
+    /* Button Adjustment */
+    button[type="submit"] {
+        max-width: 380px;
+        padding: 18px;
+        font-size: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
 </style>
 <style>
+    /* --- EXACT BUTTON MATCH --- */
+    button[type="submit"] {
+        background-color: #262626 !important;
+        /* Dark grey like screenshot */
+        color: white !important;
+        border-radius: 100px !important;
+        /* Pill shape */
+        padding: 18px 32px !important;
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1.5px !important;
+        border: none !important;
+        width: 100% !important;
+        max-width: 380px !important;
+        cursor: pointer !important;
+        transition: transform 0.2s, background-color 0.2s !important;
+        box-shadow: none !important;
+        margin-top: 10px;
+    }
 
-        /* --- EXACT BUTTON MATCH --- */
-        button[type="submit"] {
-            background-color: #262626 !important; /* Dark grey like screenshot */
-            color: white !important;
-            border-radius: 100px !important; /* Pill shape */
-            padding: 18px 32px !important;
-            font-size: 13px !important;
-            font-weight: 700 !important;
-            text-transform: uppercase !important;
-            letter-spacing: 1.5px !important;
-            border: none !important;
-            width: 100% !important;
-            max-width: 380px !important;
-            cursor: pointer !important;
-            transition: transform 0.2s, background-color 0.2s !important;
-            box-shadow: none !important;
-            margin-top: 10px;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #000000 !important;
-            transform: translateY(-1px);
-        }
+    button[type="submit"]:hover {
+        background-color: #000000 !important;
+        transform: translateY(-1px);
+    }
 </style>
