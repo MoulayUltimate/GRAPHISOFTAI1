@@ -111,7 +111,7 @@
 
             /* General Section Padding */
             .section {
-                padding: 30px 0 !important;
+                padding: 60px 0 !important;
             }
 
             /* Steps Process */
@@ -234,7 +234,7 @@
 
             <!-- Blue Card (Left, Overlapping) -->
             <div class="hero-card"
-                style="background-color: #28A9E0; padding: 30px; border-radius: 24px; width: 50%; position: absolute; top: 50%; left: 20px; transform: translateY(-50%); z-index: 2; box-shadow: 0 20px 40px rgba(0,0,0,0.1); color: #1a1a1a;">
+                style="background-color: #28A9E0; padding: 60px; border-radius: 24px; width: 50%; position: absolute; top: 50%; left: 20px; transform: translateY(-50%); z-index: 2; box-shadow: 0 20px 40px rgba(0,0,0,0.1); color: #1a1a1a;">
 
                 <!-- Logo/Header -->
                 <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 24px;">
@@ -994,7 +994,7 @@
 
                 <!-- Right Content Side -->
                 <div
-                    style="flex: 1; min-width: 300px; padding: 30px; display: flex; flex-direction: column; justify-content: center; background-color: #E0E0E0;">
+                    style="flex: 1; min-width: 300px; padding: 60px; display: flex; flex-direction: column; justify-content: center; background-color: #E0E0E0;">
 
                     <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
                         <div
@@ -1271,7 +1271,7 @@
 
     <!-- ===== FAQ SECTION ===== -->
     <section class="section" style="padding: 100px 0; background-color: #FAFAFA;">
-        <div class="container" style="max-width: 600px; margin: 0 auto; padding: 0 20px;">
+        <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 20px;">
 
             <div style="text-align: center; margin-bottom: 60px;">
                 <h2 style="font-size: 36px; font-weight: 800; color: #1a1a1a; margin: 0 0 16px 0;">Frequently Asked
@@ -1969,12 +1969,12 @@
 
         .modal-content {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
         }
 
         .modal-left {
             flex: 1;
-            padding: 30px;
+            padding: 60px;
             background-color: white;
             display: flex;
             flex-direction: column;
@@ -1983,7 +1983,7 @@
 
         .modal-right {
             flex: 1;
-            padding: 30px;
+            padding: 60px;
             background-color: #E0F7FA;
             /* Light blue background matching the image */
         }
@@ -2080,52 +2080,6 @@
                 gap: 0;
             }
         }
-
-
-        /* Mobile Modal Styles */
-        @media (max-width: 768px) {
-            .modal-overlay {
-                padding: 10px;
-            }
-
-            .modal-container {
-                max-width: 100%;
-                width: 95%;
-                max-height: 90vh;
-                overflow-y: auto;
-                border-radius: 12px;
-            }
-
-            .modal-content {
-                padding: 24px;
-            }
-
-            .modal-left {
-                padding: 0;
-            }
-
-            .modal-right {
-                padding: 20px;
-                margin-top: 20px;
-            }
-
-            .close-modal {
-                top: 12px;
-                right: 12px;
-                font-size: 24px;
-            }
-
-            .form-row {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .form-group input,
-            .form-group select {
-                font-size: 16px !important;
-            }
-        }
-
     </style>
 
     <script>
