@@ -1,0 +1,22 @@
+
+        /* Better Form Label Visibility */
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #1a1a1a;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .modal-left h2 {
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .modal-left > p {
+            margin-top: 0;
+        }
