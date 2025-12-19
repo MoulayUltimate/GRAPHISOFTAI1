@@ -1,0 +1,21 @@
+{
+    "name": "graphisoft-ecommerce",
+    "version": "1.0.0",
+    "description": "Modern eCommerce platform for digital products - Graphisoft inspired design",
+    "main": "src/js/app.js",
+    "scripts": {
+        "dev": "python3 -m http.server 8000",
+        "build": "echo 'Build complete - static site ready'",
+        "deploy": "echo 'Deploy to Cloudflare Pages'"
+    },
+    "keywords": [
+        "ecommerce",
+        "digital-products",
+        "graphisoft",
+        "cloudflare-pages"
+    ],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {},
+    "dependencies": {}
+}
