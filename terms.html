@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- FIXED VERSION: Mobile Blank Page Fix (Updated: 2025-12-20) -->
 
 <head>
     <meta charset="UTF-8">
@@ -23,6 +23,31 @@
     <link rel="stylesheet" href="assets/styles/variables.css">
     <link rel="stylesheet" href="assets/styles/main.css">
     <link rel="stylesheet" href="assets/styles/components.css">
+
+    <style>
+        /* Fix for mobile blank page issue */
+        section {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        /* Fallback for hero section */
+        .hero-section-fallback {
+            background-color: #0066CC;
+            color: white;
+        }
+
+        /* Ensure content is visible under header */
+        main {
+            padding-top: 100px !important;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding-top: 80px !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -77,8 +102,8 @@
     <main style="padding-top: calc(var(--header-height) + var(--space-8));">
 
         <!-- Hero Section -->
-        <section
-            style="background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); color: white; padding: var(--space-16) 0;">
+        <section class="hero-section-fallback"
+            style="background-color: #0066CC; background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); color: white; padding: var(--space-16) 0;">
             <div class="container">
                 <div style="max-width: 800px; margin: 0 auto; text-align: center;">
                     <h1 style="color: white; margin-bottom: var(--space-4);">Terms of Service</h1>
