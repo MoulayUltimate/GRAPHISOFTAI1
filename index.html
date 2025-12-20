@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- FIXED VERSION: Smaller Checkout Modal + Mobile Fixes (Updated: 2025-12-20) -->
+<!-- FIXED VERSION: Floating Card Modal + Borders (Updated: 2025-12-20) -->
 <html lang="en">
 
 <head>
@@ -2027,38 +2027,39 @@
         }
 
         /* --- MODAL REDESIGN (Two-Column) --- */
+        /* --- MODAL REDESIGN (Floating Card Style) --- */
         .modal-container {
             background-color: white;
-            width: 100%;
+            width: 90%;
+            /* Responsive width */
             max-width: 800px;
-            /* Reduced from 900px */
-            border-radius: 16px;
+            border-radius: 20px;
+            /* Rounded corners on ALL sides */
             position: relative;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             animation: modalFadeIn 0.3s ease-out;
             border: 1px solid #e0e0e0;
-            max-height: 90vh;
-            /* Prevent overflow on small desktop screens */
+            /* Visible border */
+            max-height: 85vh;
+            /* Ensure it fits within screen with gaps */
             display: flex;
             flex-direction: column;
+            margin: 20px;
+            /* Ensure gap from screen edges */
         }
 
         .modal-content {
             display: flex;
             flex-direction: row;
-            /* Side by side */
             min-height: auto;
-            /* Let content dictate height */
             padding: 0;
             overflow-y: auto;
-            /* Allow scrolling within content if needed */
         }
 
         .modal-left {
             flex: 1;
             padding: 32px 28px;
-            /* Reduced padding */
             background-color: white;
             display: flex;
             flex-direction: column;
@@ -2068,7 +2069,6 @@
         .modal-right {
             flex: 1;
             padding: 32px 28px;
-            /* Reduced padding */
             background-color: #f9fafb;
             display: flex;
             flex-direction: column;
@@ -2078,34 +2078,35 @@
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
             .modal-overlay {
-                padding: 0;
-                align-items: flex-end;
-                /* Bottom sheet */
+                padding: 20px;
+                /* Add padding around modal */
+                align-items: center;
+                /* Center vertically on mobile too (not bottom sheet) */
             }
 
             .modal-container {
-                max-width: 100%;
-                width: 100%;
-                max-height: 85vh;
-                /* Slightly shorter bottom sheet */
-                border-radius: 20px 20px 0 0;
+                width: 95%;
+                /* Slightly wider on mobile but still floating */
+                max-height: 80vh;
+                /* Shorter to fit on small screens */
+                border-radius: 20px;
+                /* Keep rounded corners on ALL sides */
+                margin: 0;
+                /* Overlay padding handles spacing */
             }
 
             .modal-content {
                 flex-direction: column;
-                /* Stack vertically */
             }
 
             .modal-left {
                 border-right: none;
                 border-bottom: 1px solid #e0e0e0;
                 padding: 24px 20px;
-                /* Reduced mobile padding */
             }
 
             .modal-right {
-                padding: 24px 20px 40px 20px;
-                /* Reduced mobile padding */
+                padding: 24px 20px 30px 20px;
                 background-color: white;
             }
 
@@ -2114,10 +2115,10 @@
                 right: 12px;
                 background: rgba(255, 255, 255, 0.9);
                 width: 36px;
-                /* Smaller close button */
                 height: 36px;
                 border-radius: 50%;
                 display: flex;
+
                 align-items: center;
                 justify-content: center;
                 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
