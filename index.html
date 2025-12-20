@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- FIXED VERSION: Google Sheets Integration + CSS Fix + Mobile Optimization (Updated: 2025-12-20) -->
+<!-- FIXED VERSION: Smaller Checkout Modal + Mobile Fixes (Updated: 2025-12-20) -->
 <html lang="en">
 
 <head>
@@ -2026,46 +2026,50 @@
             padding: 20px;
         }
 
-        }
-
         /* --- MODAL REDESIGN (Two-Column) --- */
         .modal-container {
             background-color: white;
             width: 100%;
-            max-width: 900px;
-            /* Wider for two columns */
+            max-width: 800px;
+            /* Reduced from 900px */
             border-radius: 16px;
             position: relative;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             animation: modalFadeIn 0.3s ease-out;
             border: 1px solid #e0e0e0;
+            max-height: 90vh;
+            /* Prevent overflow on small desktop screens */
+            display: flex;
+            flex-direction: column;
         }
 
         .modal-content {
             display: flex;
             flex-direction: row;
             /* Side by side */
-            min-height: 500px;
+            min-height: auto;
+            /* Let content dictate height */
             padding: 0;
-            /* Reset padding */
+            overflow-y: auto;
+            /* Allow scrolling within content if needed */
         }
 
         .modal-left {
             flex: 1;
-            padding: 50px 40px;
+            padding: 32px 28px;
+            /* Reduced padding */
             background-color: white;
             display: flex;
             flex-direction: column;
             border-right: 1px solid #e0e0e0;
-            /* Vertical Divider */
         }
 
         .modal-right {
             flex: 1;
-            padding: 50px 40px;
+            padding: 32px 28px;
+            /* Reduced padding */
             background-color: #f9fafb;
-            /* Slight grey background for form */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -2082,9 +2086,9 @@
             .modal-container {
                 max-width: 100%;
                 width: 100%;
-                max-height: 90vh;
+                max-height: 85vh;
+                /* Slightly shorter bottom sheet */
                 border-radius: 20px 20px 0 0;
-                overflow-y: auto;
             }
 
             .modal-content {
@@ -2095,25 +2099,28 @@
             .modal-left {
                 border-right: none;
                 border-bottom: 1px solid #e0e0e0;
-                /* Horizontal Divider */
-                padding: 30px 24px;
+                padding: 24px 20px;
+                /* Reduced mobile padding */
             }
 
             .modal-right {
-                padding: 30px 24px 50px 24px;
+                padding: 24px 20px 40px 20px;
+                /* Reduced mobile padding */
                 background-color: white;
             }
 
             .close-modal {
-                top: 15px;
-                right: 15px;
+                top: 12px;
+                right: 12px;
                 background: rgba(255, 255, 255, 0.9);
-                width: 40px;
-                height: 40px;
+                width: 36px;
+                /* Smaller close button */
+                height: 36px;
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             }
         }
 
