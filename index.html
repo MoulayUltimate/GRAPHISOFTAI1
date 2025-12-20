@@ -2076,13 +2076,15 @@
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
             .modal-overlay {
-                padding: 20px;
+                padding: 10px;
+                /* Reduced overlay padding */
                 align-items: center;
             }
 
             .modal-container {
                 width: 95%;
-                max-height: 85vh;
+                max-height: 90vh;
+                /* Allow slightly more height */
                 border-radius: 16px;
                 margin: 0;
             }
@@ -2094,19 +2096,45 @@
             .modal-left {
                 border-right: none;
                 border-bottom: 1px solid #e0e0e0;
-                padding: 20px;
+                padding: 16px;
+                /* Reduced padding */
             }
 
             .modal-right {
-                padding: 20px;
+                padding: 16px;
+                /* Reduced padding */
                 background-color: white;
             }
 
             .close-modal {
-                top: 10px;
-                right: 10px;
-                width: 32px;
-                height: 32px;
+                top: 8px;
+                right: 8px;
+                width: 28px;
+                height: 28px;
+                font-size: 20px;
+                line-height: 28px;
+            }
+
+            /* Compact Typography for Mobile */
+            .modal-left h2,
+            .modal-right h2 {
+                font-size: 18px !important;
+                margin-bottom: 8px !important;
+            }
+
+            .modal-left>p,
+            .modal-right>p {
+                font-size: 13px !important;
+                margin-bottom: 12px !important;
+            }
+
+            .form-group {
+                margin-bottom: 12px !important;
+            }
+
+            .form-group label {
+                font-size: 12px !important;
+                margin-bottom: 4px !important;
             }
         }
 
