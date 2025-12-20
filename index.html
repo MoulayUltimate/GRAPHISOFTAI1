@@ -2077,17 +2077,19 @@
         @media (max-width: 768px) {
             .modal-overlay {
                 padding: 16px;
-                align-items: center;
-                /* Center vertically */
+                align-items: flex-start;
+                /* Start from top */
+                padding-top: 100px;
+                /* Push down from header */
             }
 
             .modal-container {
                 width: 90%;
                 /* Smaller width to float */
-                max-height: 85vh;
+                max-height: 80vh;
                 border-radius: 20px;
-                margin: auto;
-                /* Float in center */
+                margin: 0 auto;
+                /* Center horizontally */
                 box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
                 /* Stronger shadow for depth */
             }
