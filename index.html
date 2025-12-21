@@ -2223,27 +2223,19 @@
                 .then(() => {
                     // Since no-cors returns an opaque response, we assume success if no error was thrown
                     console.log('Request sent to Google Sheets');
-                    alert('Thank you! Your email has been saved.\n\nEmail: ' + email + '\n\nReady for Stripe Integration!');
-
-                    // Reset form
-                    event.target.reset();
-                    if (submitButton) {
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Complete Secure Payment';
-                    }
-
-                    // Close modal after success
-                    closeCheckoutModal();
+                    // Redirect to Stripe with email prefilled
+                    const stripeURL = 'https://buy.stripe.com/aFadRa98451XdGodLR6g801';
+                    const stripePaymentLink = stripeURL + '?prefilled_email=' + encodeURIComponent(email);
+                    console.log('Redirecting to Stripe:', stripePaymentLink);
+                    window.location.href = stripePaymentLink;
                 })
                 .catch(error => {
                     console.error('Error saving email:', error);
                     // Even if it fails, we might want to proceed or alert the user
-                    alert('Email saved locally! Ready for Stripe Integration.\nEmail: ' + email);
-
-                    if (submitButton) {
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Complete Secure Payment';
-                    }
+                    // Redirect to Stripe anyway
+                    const stripeURL = 'https://buy.stripe.com/aFadRa98451XdGodLR6g801';
+                    const stripePaymentLink = stripeURL + '?prefilled_email=' + encodeURIComponent(email);
+                    window.location.href = stripePaymentLink;
                 });
         }
 
