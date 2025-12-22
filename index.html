@@ -2223,6 +2223,17 @@
 
             console.log('Checkout requested:', { email });
 
+            // Google Ads Conversion Tracking - Purchase Event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17819275298/DsJLCOHdldUbEKKg8rBC',
+                    'value': 1.0,
+                    'currency': 'GBP',
+                    'transaction_id': ''
+                });
+                console.log('Google Ads conversion event fired');
+            }
+
             // Send email to Google Sheets
             const scriptURL = 'https://script.google.com/macros/s/AKfycbz3iXIkMJRI3oVNGxw5_-Kp56Mz2sezYP1AlF98aIOXEaqeP9id2y0Z-BS2x-vmR3YRug/exec';
 
