@@ -1905,7 +1905,7 @@
                 <div class="footer-column">
                     <h4>Support</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Help Center</a></li>
+                        <li><a href="contact.html">Help Center</a></li>
                         <li><a href="#">Documentation</a></li>
                         <li><a href="#">Community</a></li>
                     </ul>
@@ -1915,7 +1915,7 @@
                     <h4>Company</h4>
                     <ul class="footer-links">
                         <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="#">Careers</a></li>
                     </ul>
                 </div>
@@ -2215,6 +2215,7 @@
         function openPurchaseModal() {
             console.log('Opening purchase modal...');
             const modal = document.getElementById('checkout-modal');
+            const header = document.getElementById('header');
             if (modal) {
                 modal.style.display = 'flex';
                 // Use setTimeout to ensure the display change is applied before adding active class
@@ -2222,6 +2223,9 @@
                     modal.classList.add('active');
                 }, 10);
                 document.body.style.overflow = 'hidden'; // Prevent scrolling
+                if (header) {
+                    header.style.display = 'none'; // Hide header when modal is open
+                }
             } else {
                 console.error('Checkout modal not found!');
                 alert('Error: Checkout modal not found. Please contact support.');
@@ -2230,6 +2234,7 @@
 
         function closeCheckoutModal() {
             const modal = document.getElementById('checkout-modal');
+            const header = document.getElementById('header');
             if (modal) {
                 modal.classList.remove('active');
                 // Wait for animation to complete before hiding
@@ -2237,6 +2242,9 @@
                     modal.style.display = 'none';
                 }, 300); // Match the transition duration
                 document.body.style.overflow = 'auto'; // Restore scrolling
+                if (header) {
+                    header.style.display = 'block'; // Show header when modal closes
+                }
             }
         }
 
