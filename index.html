@@ -2309,27 +2309,21 @@
                         console.log('Google Ads conversion event fired');
                     }
 
-                    alert('Thank you! Your email has been saved.\n\nEmail: ' + email + '\n\nReady for Stripe Integration!');
+                    // Redirect to Stripe checkout with email prefilled
+                    const stripeUrl = 'https://buy.stripe.com/3cIbIV5GN0VE3UV5HRbII00';
+                    const stripeCheckoutUrl = `${stripeUrl}?prefilled_email=${encodeURIComponent(email)}`;
 
-                    // Reset form
-                    event.target.reset();
-                    if (submitButton) {
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Complete Secure Payment';
-                    }
-
-                    // Close modal after success
-                    closeCheckoutModal();
+                    console.log('Redirecting to Stripe checkout...');
+                    window.location.href = stripeCheckoutUrl;
                 })
                 .catch(error => {
                     console.error('Error saving email:', error);
-                    // Even if it fails, we might want to proceed or alert the user
-                    alert('Email saved locally! Ready for Stripe Integration.\nEmail: ' + email);
+                    // Even if email saving fails, still proceed to Stripe
+                    console.log('Proceeding to Stripe despite error...');
 
-                    if (submitButton) {
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Complete Secure Payment';
-                    }
+                    const stripeUrl = 'https://buy.stripe.com/3cIbIV5GN0VE3UV5HRbII00';
+                    const stripeCheckoutUrl = `${stripeUrl}?prefilled_email=${encodeURIComponent(email)}`;
+                    window.location.href = stripeCheckoutUrl;
                 });
         }
 
