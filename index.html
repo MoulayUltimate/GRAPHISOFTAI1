@@ -1949,127 +1949,55 @@
         <div class="modal-container">
             <span class="close-modal" onclick="closeCheckoutModal()">&times;</span>
             <div class="modal-content">
-                <!-- Left Side (Form) -->
-                <div class="modal-left">
-                    <form id="checkout-form" onsubmit="handleCheckoutSubmit(event)">
-                        <div class="form-group">
-                            <label for="email">Email address *</label>
-                            <input type="email" id="email" name="email" required placeholder="your@email.com">
-                        </div>
 
-                        <button type="submit" class="btn-submit">PROCEED TO PAYMENT</button>
-                    </form>
+                <!-- Product Header -->
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <img src="assets/images/archicad-logo.jpg" alt="Archicad Logo"
+                        style="width: 100px; height: 100px; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); margin-bottom: 20px;">
+                    <h2 style="font-size: 28px; font-weight: 800; color: #1a1a1a; margin: 0;">Complete Your Order</h2>
+                </div>
 
-                    <!-- Order Summary to fill white space -->
-                    <div
-                        style="margin: 20px auto 0 auto; width: 100%; max-width: 380px; border-top: 1px solid #eee; padding-top: 16px;">
-                        <h4
-                            style="font-size: 14px; font-weight: 800; color: #1a1a1a; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">
-                            Order Summary</h4>
+                <!-- Order Summary -->
+                <div style="margin-bottom: 30px;">
+                    <h3
+                        style="font-size: 13px; font-weight: 700; color: #666; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px;">
+                        Order Summary
+                    </h3>
 
+                    <div style="background: #f9fafb; border-radius: 12px; padding: 20px; border: 1px solid #e9ecef;">
                         <div
-                            style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px; color: #555;">
-                            <span>Archicad 29 Lifetime</span>
-                            <span style="font-weight: 600; color: #1a1a1a;">$79.00</span>
-                        </div>
-
-                        <div
-                            style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px; color: #555;">
-                            <span>Tax</span>
-                            <span style="font-weight: 600; color: #1a1a1a;">$0.00</span>
+                            style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 16px;">
+                            <span style="color: #666;">Archicad 29 Lifetime License</span>
+                            <span style="font-weight: 700; color: #1a1a1a;">$79.00</span>
                         </div>
 
                         <div
-                            style="display: flex; justify-content: space-between; margin-top: 16px; padding-top: 16px; border-top: 1px dashed #ddd; font-size: 18px; font-weight: 800; color: #1a1a1a;">
+                            style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 16px;">
+                            <span style="color: #666;">Tax</span>
+                            <span style="font-weight: 700; color: #1a1a1a;">$0.00</span>
+                        </div>
+
+                        <div style="height: 1px; background: #e0e0e0; margin: 16px 0;"></div>
+
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 24px; font-weight: 800; color: #1a1a1a;">
                             <span>Total</span>
                             <span>$79.00</span>
                         </div>
-
-                        <!-- Professional Safe Checkout Badge -->
-                        <div
-                            style="margin-top: 16px; background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 12px; padding: 12px; text-align: center;">
-                            <div
-                                style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 8px; color: #2b2b2b; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e"
-                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                                </svg>
-                                Guaranteed Safe Checkout
-                            </div>
-
-                            <!-- Payment Icons -->
-                            <div style="display: flex; gap: 6px; justify-content: center; flex-wrap: wrap;">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
-                                    alt="Visa"
-                                    style="height: 20px; padding: 2px 6px; background: white; border-radius: 4px; border: 1px solid #eee;">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
-                                    alt="Mastercard"
-                                    style="height: 20px; padding: 2px 6px; background: white; border-radius: 4px; border: 1px solid #eee;">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg"
-                                    alt="Amex"
-                                    style="height: 20px; padding: 2px 6px; background: white; border-radius: 4px; border: 1px solid #eee;">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Apple_Pay_logo.svg"
-                                    alt="Apple Pay"
-                                    style="height: 20px; padding: 2px 6px; background: white; border-radius: 4px; border: 1px solid #eee;">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg"
-                                    alt="Stripe"
-                                    style="height: 20px; padding: 2px 6px; background: white; border-radius: 4px; border: 1px solid #eee;">
-                            </div>
-                        </div>
                     </div>
                 </div>
 
-                <!-- Right Side (Product Details) -->
-                <div class="modal-right">
-                    <!-- Logo -->
-                    <div style="margin-bottom: 16px;">
-                        <img src="assets/images/archicad-logo.jpg" alt="Archicad Logo"
-                            style="width: 64px; height: 64px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    </div>
-
-                    <h2 style="font-size: 24px; font-weight: 800; color: #1a1a1a; margin-bottom: 8px;">GRAPHISOFT
-                        Archicad 29</h2>
-                    <p
-                        style="font-size: 15px; line-height: 1.4; color: #1a1a1a; font-weight: 600; margin-bottom: 16px;">
-                        Lifetime License - Windows
-                    </p>
-
-                    <!-- Price -->
-                    <div
-                        style="margin-bottom: 16px; padding: 16px; background-color: rgba(255,255,255,0.5); border-radius: 12px;">
-                        <div style="font-size: 13px; color: #666; margin-bottom: 4px;">Your Price</div>
-                        <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px;">
-                            <span style="font-size: 40px; font-weight: 800; color: #1a1a1a;">$79</span>
-                            <span style="font-size: 18px; color: #999; text-decoration: line-through;">$1,995</span>
-                        </div>
-                        <div style="font-size: 13px; color: #00ACC1; font-weight: 600;">Save $1,916 (96% OFF)</div>
-                    </div>
-
-                    <p style="font-size: 14px; line-height: 1.5; color: #444; margin-bottom: 16px;">
-                        Design and deliver projects of any size with Archicad's powerful built-in tools and
-                        user-friendly interface.
-                    </p>
-                    <ul
-                        style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
-                        <li style="display: flex; align-items: start; gap: 10px; font-size: 13px; color: #444;">
-                            <span style="color: #00ACC1; font-weight: bold;">✓</span>
-                            Lifetime activation - No subscriptions
-                        </li>
-                        <li style="display: flex; align-items: start; gap: 10px; font-size: 13px; color: #444;">
-                            <span style="color: #00ACC1; font-weight: bold;">✓</span>
-                            Instant email delivery
-                        </li>
-                        <li style="display: flex; align-items: start; gap: 10px; font-size: 13px; color: #444;">
-                            <span style="color: #00ACC1; font-weight: bold;">✓</span>
-                            24/7 customer support
-                        </li>
-                        <li style="display: flex; align-items: start; gap: 10px; font-size: 13px; color: #444;">
-                            <span style="color: #00ACC1; font-weight: bold;">✓</span>
-                            Step-by-step installation guide
-                        </li>
-                    </ul>
-                </div>
+                <!-- Checkout Button -->
+                <button onclick="proceedToStripeCheckout()" id="completePurchaseBtn"
+                    style="width: 100%; background: #00ACC1; color: white; border: none; padding: 20px 32px; border-radius: 12px; font-size: 18px; font-weight: 800; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 16px rgba(0,172,193,0.3);">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        style="display: inline-block; vertical-align: middle; margin-right: 10px;">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    Proceed to Checkout
+                </button>
             </div>
         </div>
     </div>
@@ -2083,7 +2011,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.7);
             z-index: 1000;
             display: flex;
             justify-content: center;
@@ -2092,114 +2020,72 @@
             padding: 20px;
         }
 
-        /* --- MODAL REDESIGN (Two-Column) --- */
-        /* --- MODAL REDESIGN (Floating Card Style) --- */
+        /* Modal Container - Single Column */
         .modal-container {
             background-color: white;
             width: 90%;
-            max-width: 800px;
-            border-radius: 16px;
+            max-width: 550px;
+            border-radius: 20px;
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow-y: auto;
+            max-height: 90vh;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
             animation: modalFadeIn 0.3s ease-out;
             border: 1px solid #e0e0e0;
-            max-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            margin: auto;
-            /* Center in the overlay */
         }
 
         .modal-content {
-            display: flex;
-            flex-direction: row;
-            min-height: auto;
-            padding: 0;
-            overflow-y: auto;
+            padding: 32px;
         }
 
-        .modal-left {
-            flex: 1;
-            padding: 24px;
-            /* Reduced padding */
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-            border-right: 1px solid #e0e0e0;
+        .close-modal {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            font-size: 32px;
+            font-weight: 300;
+            color: #999;
+            cursor: pointer;
+            background: none;
+            border: none;
+            line-height: 1;
+            z-index: 10;
+            transition: color 0.2s;
         }
 
-        .modal-right {
-            flex: 1;
-            padding: 24px;
-            /* Reduced padding */
-            background-color: #f9fafb;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        .close-modal:hover {
+            color: #333;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
-            .modal-overlay {
-                padding: 20px;
-                align-items: center;
-            }
-
             .modal-container {
                 width: 95%;
                 max-height: 85vh;
                 border-radius: 16px;
-                margin: 0;
             }
 
             .modal-content {
-                flex-direction: column;
-            }
-
-            .modal-left {
-                border-right: none;
-                border-bottom: 1px solid #e0e0e0;
-                padding: 20px;
-            }
-
-            .modal-right {
-                padding: 20px;
-                background-color: white;
+                padding: 24px;
             }
 
             .close-modal {
-                top: 10px;
-                right: 10px;
-                width: 32px;
-                height: 32px;
+                top: 12px;
+                right: 12px;
+                font-size: 28px;
             }
-        }
-
-        /* Better Form Label Visibility */
-        .form-group label {
-            display: block;
-            margin-bottom: 6px;
-            /* Reduced margin */
-            font-weight: 600;
-            font-size: 13px;
-            /* Slightly smaller */
-            color: #1a1a1a;
-        }
-
-        .form-group {
-            margin-bottom: 16px;
-            /* Reduced margin */
-        }
-
-        .modal-left h2 {
-            margin-top: 0;
-            margin-bottom: 8px;
-        }
-
-        .modal-left>p {
-            margin-top: 0;
-            margin-bottom: 16px;
         }
     </style>
 
@@ -2328,10 +2214,58 @@
         }
 
 
+        // New Direct Checkout Function
+        function proceedToStripeCheckout() {
+            const submitBtn = document.getElementById('completePurchaseBtn');
+
+            // Show loading state
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 10px; animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg> Processing...';
+                submitBtn.style.opacity = '0.7';
+                submitBtn.style.cursor = 'not-allowed';
+            }
+
+            // Google Ads Purchase conversion tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17824710605/nOveCJmM5tUbEM3_vbNC',
+                    'value': 79.0,
+                    'currency': 'USD'
+                });
+                console.log('Google Ads conversion event fired');
+            }
+
+            // Redirect to Stripe checkout
+            const stripeUrl = 'https://buy.stripe.com/3cIbIV5GN0VE3UV5HRbII00';
+            console.log('🔄 Redirecting to Stripe checkout...');
+            window.location.href = stripeUrl;
+        }
+
+        // Button hover effects
+        document.addEventListener('DOMContentLoaded', function () {
+            const completePurchaseBtn = document.getElementById('completePurchaseBtn');
+            if (completePurchaseBtn) {
+                completePurchaseBtn.addEventListener('mouseover', function () {
+                    if (!this.disabled) {
+                        this.style.background = '#009fb3';
+                        this.style.transform = 'translateY(-2px)';
+                    }
+                });
+                completePurchaseBtn.addEventListener('mouseout', function () {
+                    if (!this.disabled) {
+                        this.style.background = '#00ACC1';
+                        this.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+        });
+
         // Expose functions to global scope
         window.openPurchaseModal = openPurchaseModal;
         window.closeCheckoutModal = closeCheckoutModal;
         window.handleCheckoutSubmit = handleCheckoutSubmit;
+        window.proceedToStripeCheckout = proceedToStripeCheckout;
 
         // Countdown Timer for Limited Offer Banner
         function updateCountdown() {
