@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- FIXED VERSION: Mobile Blank Page Fix (Updated: 2025-12-20) -->
 
 <head>
     <!-- Google tag (gtag.js) -->
@@ -36,6 +36,34 @@
     <link rel="stylesheet" href="assets/styles/variables.css">
     <link rel="stylesheet" href="assets/styles/main.css">
     <link rel="stylesheet" href="assets/styles/components.css">
+
+    <style>
+        /* Fix for mobile blank page issue */
+        section {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        /* Fallback for hero section */
+        .hero-section-fallback {
+            background-color: #0066CC;
+            color: white;
+        }
+
+        /* Ensure content is visible under header */
+        main,
+        .page-content {
+            padding-top: 100px !important;
+        }
+
+        @media (max-width: 768px) {
+
+            main,
+            .page-content {
+                padding-top: 80px !important;
+            }
+        }
+    </style>
 
     <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
