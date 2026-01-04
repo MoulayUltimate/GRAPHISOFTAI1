@@ -1,7 +1,26 @@
 <!DOCTYPE html>
+<!-- FIXED VERSION: Floating Card Modal + Borders (Updated: 2025-12-20) -->
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17824710605"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-17824710605');
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-671VZK145M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-671VZK145M');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -171,6 +190,96 @@
             }
         }
     </style>
+    <style>
+        /* Pricing Split Layout */
+        .pricing-split-container {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .pricing-left-col {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .pricing-divider {
+            width: 1px;
+            background-color: #e0e0e0;
+            margin: 40px 0;
+        }
+
+        .pricing-right-col {
+            flex: 0 0 400px;
+            /* Fixed width for price section */
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media (max-width: 900px) {
+            .pricing-split-container {
+                flex-direction: column-reverse;
+            }
+
+            .pricing-right-col {
+                flex: auto;
+                width: 100%;
+                border-bottom: 1px solid #e0e0e0;
+                padding: 40px;
+            }
+
+            .pricing-divider {
+                display: none;
+            }
+
+
+            .pricing-left-col {
+                padding: 40px;
+            }
+        }
+
+        /* Mobile-friendly styles for Limited Offer Banner */
+        @media (max-width: 768px) {
+            .limited-offer-banner {
+                padding: 20px 16px !important;
+                margin-bottom: 32px !important;
+            }
+
+            .limited-offer-content {
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+
+            .limited-offer-left {
+                min-width: 100% !important;
+                text-align: center !important;
+            }
+
+            .limited-offer-left h3 {
+                font-size: 18px !important;
+            }
+
+            .limited-offer-left p {
+                font-size: 13px !important;
+            }
+
+            .limited-offer-timer {
+                justify-content: center !important;
+                width: 100%;
+                gap: 8px !important;
+            }
+
+            .limited-offer-timer>div {
+                min-width: 60px !important;
+                padding: 10px 12px !important;
+            }
+
+            .limited-offer-timer>div>div:first-child {
+                font-size: 20px !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -222,7 +331,7 @@
     </header>
 
     <!-- ===== HERO SECTION ===== -->
-    <section class="hero-new" style="padding: 80px 0; background-color: #f9f9f9; overflow: hidden;">
+    <section class="hero-new" style="padding: 50px 0; margin-top: 80px; background-color: #f9f9f9; overflow: hidden;">
         <div class="container" style="position: relative; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
 
             <!-- Image Container (Right) -->
@@ -263,7 +372,7 @@
                     <a href="#product"
                         style="background-color: #1a1a1a; color: white; padding: 16px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; display: inline-block; transition: transform 0.2s;">Buy
                         Now</a>
-                    <a href="#download"
+                    <a href="#product"
                         style="background-color: transparent; color: #1a1a1a; border: 2px solid #1a1a1a; padding: 14px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; display: inline-block; transition: background 0.2s;">Download
                         Now</a>
                 </div>
@@ -357,8 +466,64 @@
     </section>
 
     <!-- ===== PLANS AND PRICING SECTION ===== -->
-    <section id="product" style="padding: 100px 0; background-color: white; font-family: 'Inter', sans-serif;">
+    <section id="product" style="padding: 60px 0; background-color: white; font-family: 'Inter', sans-serif;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+
+            <!-- Limited Offer Banner -->
+            <div class="limited-offer-banner"
+                style="background: linear-gradient(135deg, #FF6B6B 0%, #EE5A6F 100%); border-radius: 16px; padding: 24px 32px; margin-bottom: 48px; box-shadow: 0 8px 24px rgba(255, 107, 107, 0.25); position: relative; overflow: hidden;">
+                <!-- Animated background pattern -->
+                <div
+                    style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px); pointer-events: none;">
+                </div>
+
+                <div class="limited-offer-content"
+                    style="position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+                    <!-- Left side: Main message -->
+                    <div class="limited-offer-left" style="flex: 1; min-width: 280px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                            <span
+                                style="background: white; color: #FF6B6B; padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">Limited
+                                Time</span>
+                            <span style="color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 600;">Only 47
+                                licenses left!</span>
+                        </div>
+                        <h3
+                            style="color: white; font-size: 22px; font-weight: 800; margin: 0 0 4px 0; line-height: 1.2;">
+                            Special Launch Offer - Save $1,995 Today</h3>
+                        <p style="color: rgba(255,255,255,0.95); margin: 0; font-size: 14px;">Get Archicad 29 Lifetime
+                            License at 96% OFF before this offer expires</p>
+                    </div>
+
+                    <!-- Right side: Countdown timer -->
+                    <div class="limited-offer-timer" style="display: flex; gap: 12px; align-items: center;">
+                        <div
+                            style="text-align: center; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 12px 16px; border-radius: 12px; min-width: 70px; border: 1px solid rgba(255,255,255,0.2);">
+                            <div style="color: white; font-size: 24px; font-weight: 800; line-height: 1;"
+                                id="hours-left">23</div>
+                            <div
+                                style="color: rgba(255,255,255,0.9); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px;">
+                                Hours</div>
+                        </div>
+                        <div
+                            style="text-align: center; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 12px 16px; border-radius: 12px; min-width: 70px; border: 1px solid rgba(255,255,255,0.2);">
+                            <div style="color: white; font-size: 24px; font-weight: 800; line-height: 1;"
+                                id="mins-left">47</div>
+                            <div
+                                style="color: rgba(255,255,255,0.9); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px;">
+                                Mins</div>
+                        </div>
+                        <div
+                            style="text-align: center; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 12px 16px; border-radius: 12px; min-width: 70px; border: 1px solid rgba(255,255,255,0.2);">
+                            <div style="color: white; font-size: 24px; font-weight: 800; line-height: 1;"
+                                id="secs-left">32</div>
+                            <div
+                                style="color: rgba(255,255,255,0.9); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px;">
+                                Secs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Tabs Header -->
             <div
@@ -369,93 +534,107 @@
 
             <!-- Pricing Card -->
             <div
-                style="max-width: 500px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 24px; padding: 40px; background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                style="max-width: 960px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 24px; background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden;">
 
-                <!-- Card Header: Icons & Title -->
-                <div style="margin-bottom: 24px;">
-                    <div style="display: flex; gap: 8px; margin-bottom: 16px;">
-                        <img src="assets/images/archicad-logo.jpg" alt="Archicad"
-                            style="width: 32px; height: 32px; border-radius: 6px;">
+                <div class="pricing-split-container">
+                    <!-- Left Side: Features & Benefits -->
+                    <div class="pricing-left-col">
+                        <!-- Features List -->
+                        <div style="margin-bottom: 32px;">
+                            <h4 style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 20px;">Key
+                                features:</h4>
+                            <ul
+                                style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+                                <li
+                                    style="display: flex; align-items: start; gap: 12px; font-size: 15px; color: #444; line-height: 1.5;">
+                                    <span style="color: #1a1a1a; font-weight: bold;">•</span>
+                                    One-Time Payment – Fully Activated for Lifetime Access
+                                </li>
+                                <li
+                                    style="display: flex; align-items: start; gap: 12px; font-size: 15px; color: #444; line-height: 1.5;">
+                                    <span style="color: #1a1a1a; font-weight: bold;">•</span>
+                                    Fast email delivery guaranteed
+                                </li>
+                                <li
+                                    style="display: flex; align-items: start; gap: 12px; font-size: 15px; color: #444; line-height: 1.5;">
+                                    <span style="color: #1a1a1a; font-weight: bold;">•</span>
+                                    You'll get a direct download link of the software
+                                </li>
+                                <li
+                                    style="display: flex; align-items: start; gap: 12px; font-size: 15px; color: #444; line-height: 1.5;">
+                                    <span style="color: #1a1a1a; font-weight: bold;">•</span>
+                                    No monthly fees or subscription renewals—one time purchase
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Additional Benefits -->
+                        <div style="margin-bottom: 24px;">
+                            <h4 style="font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 20px;">
+                                Additional benefits:</h4>
+                            <ul
+                                style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+                                <li
+                                    style="display: flex; align-items: start; gap: 12px; font-size: 15px; color: #444; line-height: 1.5;">
+                                    <span style="color: #1a1a1a; font-weight: bold;">•</span>
+                                    Step-by-Step Installation Video Included via Email
+                                </li>
+                                <li
+                                    style="display: flex; align-items: start; gap: 12px; font-size: 15px; color: #444; line-height: 1.5;">
+                                    <span style="color: #1a1a1a; font-weight: bold;">•</span>
+                                    Warranty & 24/7 Customer Support
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Bottom Link -->
+                        <div style="border-top: 1px solid #eee; padding-top: 24px;">
+                            <a href="#features"
+                                style="font-size: 13px; font-weight: 600; color: #666; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 6px;">
+                                PLAN DETAILS
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                    <h3 style="font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 0 0 8px 0;">Archicad 29
-                        Lifetime</h3>
-                    <div style="font-size: 14px; color: #666;">One-Time Payment – Fully Activated</div>
-                </div>
 
-                <!-- Price -->
-                <div style="margin-bottom: 32px;">
-                    <div style="font-size: 14px; color: #666; margin-bottom: 4px;">Starting from</div>
-                    <div style="display: flex; align-items: baseline; gap: 10px;">
-                        <span style="font-size: 42px; font-weight: 800; color: #1a1a1a;">$79</span>
-                        <span style="font-size: 16px; color: #999; text-decoration: line-through;">$1,995</span>
+                    <!-- Divider -->
+                    <div class="pricing-divider"></div>
+
+                    <!-- Right Side: Product & Price -->
+                    <div class="pricing-right-col">
+                        <!-- Card Header: Icons & Title -->
+                        <div style="margin-bottom: 24px;">
+                            <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+                                <img src="assets/images/archicad-logo.jpg" alt="Archicad"
+                                    style="width: 48px; height: 48px; border-radius: 8px;">
+                            </div>
+                            <h3 style="font-size: 28px; font-weight: 700; color: #1a1a1a; margin: 0 0 8px 0;">Archicad
+                                29 Lifetime</h3>
+                            <div style="font-size: 15px; color: #666;">One-Time Payment – Fully Activated</div>
+                        </div>
+
+                        <!-- Price -->
+                        <div style="margin-bottom: 32px;">
+                            <div style="font-size: 15px; color: #666; margin-bottom: 4px;">Starting from</div>
+                            <div style="display: flex; align-items: baseline; gap: 12px;">
+                                <span
+                                    style="font-size: 56px; font-weight: 800; color: #1a1a1a; line-height: 1;">$79</span>
+                                <span style="font-size: 20px; color: #999; text-decoration: line-through;">$1,995</span>
+                            </div>
+                            <div style="font-size: 14px; color: #666; margin-top: 8px;">+ tax / lifetime license</div>
+                        </div>
+
+                        <!-- CTA Button -->
+                        <button onclick="openPurchaseModal()"
+                            style="width: 100%; background-color: #1a1a1a; color: white; border: none; padding: 18px; border-radius: 50px; font-weight: 700; font-size: 15px; letter-spacing: 1px; cursor: pointer; transition: transform 0.2s, background 0.2s; text-transform: uppercase; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+                            onmouseover="this.style.transform='translateY(-2px)'; this.style.backgroundColor='#000';"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.backgroundColor='#1a1a1a';">
+                            GET IT NOW
+                        </button>
                     </div>
-                    <div style="font-size: 13px; color: #666; margin-top: 4px;">+ tax / lifetime license</div>
-                </div>
-
-                <!-- CTA Button -->
-                <button onclick="openPurchaseModal()"
-                    style="width: 100%; background-color: #2b2b2b; color: white; border: none; padding: 16px; border-radius: 50px; font-weight: 700; font-size: 14px; letter-spacing: 1px; cursor: pointer; transition: background 0.2s; text-transform: uppercase; margin-bottom: 32px;">
-                    GET IT NOW
-                </button>
-
-                <!-- Features List -->
-                <div style="margin-bottom: 24px;">
-                    <h4 style="font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 16px;">Key features:
-                    </h4>
-                    <ul
-                        style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
-                        <li
-                            style="display: flex; align-items: start; gap: 10px; font-size: 14px; color: #444; line-height: 1.5;">
-                            <span style="color: #1a1a1a; font-weight: bold;">•</span>
-                            One-Time Payment – Fully Activated for Lifetime Access
-                        </li>
-                        <li
-                            style="display: flex; align-items: start; gap: 10px; font-size: 14px; color: #444; line-height: 1.5;">
-                            <span style="color: #1a1a1a; font-weight: bold;">•</span>
-                            Fast email delivery guaranteed
-                        </li>
-                        <li
-                            style="display: flex; align-items: start; gap: 10px; font-size: 14px; color: #444; line-height: 1.5;">
-                            <span style="color: #1a1a1a; font-weight: bold;">•</span>
-                            You’ll get a direct download link of the software
-                        </li>
-                        <li
-                            style="display: flex; align-items: start; gap: 10px; font-size: 14px; color: #444; line-height: 1.5;">
-                            <span style="color: #1a1a1a; font-weight: bold;">•</span>
-                            No monthly fees or subscription renewals—one time purchase
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Additional Benefits -->
-                <div style="margin-bottom: 32px;">
-                    <h4 style="font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 16px;">Additional
-                        benefits:</h4>
-                    <ul
-                        style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
-                        <li
-                            style="display: flex; align-items: start; gap: 10px; font-size: 14px; color: #444; line-height: 1.5;">
-                            <span style="color: #1a1a1a; font-weight: bold;">•</span>
-                            Step-by-Step Installation Video Included via Email
-                        </li>
-                        <li
-                            style="display: flex; align-items: start; gap: 10px; font-size: 14px; color: #444; line-height: 1.5;">
-                            <span style="color: #1a1a1a; font-weight: bold;">•</span>
-                            Warranty & 24/7 Customer Support
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Bottom Link -->
-                <div style="border-top: 1px solid #eee; padding-top: 20px;">
-                    <a href="#features"
-                        style="font-size: 12px; font-weight: 600; color: #666; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 6px;">
-                        PLAN DETAILS
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </a>
                 </div>
 
             </div>
@@ -464,7 +643,7 @@
     </section>
 
     <!-- ===== WHAT HAPPENS AFTER CHECKOUT SECTION ===== -->
-    <section class="section" style="padding: 100px 0; background-color: #FAFAFA;">
+    <section class="section" style="padding: 60px 0; background-color: #FAFAFA;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
 
             <div style="text-align: center; margin-bottom: 60px;">
@@ -600,7 +779,7 @@
 
 
     <!-- ===== SYSTEM REQUIREMENTS SECTION ===== -->
-    <section id="system-requirements" class="section" style="padding: 100px 0; background-color: white;">
+    <section id="system-requirements" class="section" style="padding: 60px 0; background-color: white;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
 
             <div style="margin-bottom: 40px;">
@@ -616,132 +795,91 @@
                             <th
                                 style="background-color: #E0F7FA; padding: 20px; text-align: left; border-bottom: 1px solid #e0e0e0; width: 20%;">
                             </th>
-                            <th colspan="3"
-                                style="background-color: #E0F7FA; padding: 20px; text-align: left; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #B2EBF2; font-weight: 700; color: #1a1a1a;">
-                                Recommended configuration</th>
                             <th
-                                style="background-color: #E0F7FA; padding: 20px; text-align: left; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #B2EBF2; font-weight: 700; color: #1a1a1a;">
-                                Minimum Hardware Requirements</th>
+                                style="background-color: #E0F7FA; padding: 20px; text-align: left; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #B2EBF2; font-weight: 700; color: #1a1a1a; width: 40%;">
+                                Recommended Requirements</th>
+                            <th
+                                style="background-color: #E0F7FA; padding: 20px; text-align: left; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #B2EBF2; font-weight: 700; color: #1a1a1a; width: 40%;">
+                                Minimum Requirements</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td
                                 style="padding: 20px; border-bottom: 1px solid #e0e0e0; font-weight: 700; color: #1a1a1a;">
-                                Project size</td>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0;">
-                                <div style="font-weight: 700; color: #1a1a1a; margin-bottom: 4px;">Entry-level</div>
-                                <div style="color: #444; font-size: 14px;">Residential homes</div>
-                            </td>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0;">
-                                <div style="font-weight: 700; color: #1a1a1a; margin-bottom: 4px;">Mid-range</div>
-                                <div style="color: #444; font-size: 14px;">Apartment and office Buildings</div>
-                            </td>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0;">
-                                <div style="font-weight: 700; color: #1a1a1a; margin-bottom: 4px;">High-end</div>
-                                <div style="color: #444; font-size: 14px;">High rises, Hospitals</div>
-                            </td>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; background-color: #FAFAFA;">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; font-weight: 700; color: #1a1a1a;">
-                                CPU</td>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444;">
-                                Apple M1</td>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444;">
-                                Apple M2/M3/M4</td>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444;">
-                                Apple M2 Max/M2 Ultra</td>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444; background-color: #FAFAFA;">
-                                Intel x64 multi-core processor</td>
-                        </tr>
-                        <tr>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; font-weight: 700; color: #1a1a1a;">
-                                RAM</td>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444;">
-                                16 GB</td>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444;">
-                                32 GB</td>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444;">
-                                64+ GB</td>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444; background-color: #FAFAFA;">
-                                8 GB RAM</td>
-                        </tr>
-                        <tr>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; font-weight: 700; color: #1a1a1a;">
-                                Disk</td>
-                            <td colspan="3"
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444;">
-                                NVMe SSD 5+ GB of free space</td>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; background-color: #FAFAFA;">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; font-weight: 700; color: #1a1a1a;">
-                                Display resolution</td>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444;">
-                                <div style="font-weight: 600;">FHD+</div>
-                                <div style="font-size: 13px;">(1920×1080)</div>
-                            </td>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444;">
-                                <div style="font-weight: 600;">2K</div>
-                                <div style="font-size: 13px;">(2560×1600)</div>
-                            </td>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444;">
-                                <div style="font-weight: 600;">5K (5120×2880)</div>
-                            </td>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444; background-color: #FAFAFA;">
-                                1440×900</td>
-                        </tr>
-                        <tr>
-                            <td
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; font-weight: 700; color: #1a1a1a;">
-                                Optional Hardware Peripherals</td>
-                            <td colspan="4"
+                                Operating System</td>
+                            <td colspan="2"
                                 style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444; line-height: 1.6;">
-                                All major plotters, printers, and digitizers can be used with Archicad/MEP Designer.
-                                Driver support is provided by the operating system.
+                                <div style="margin-bottom: 8px;"><strong>Windows:</strong> Windows 11 (64-bit)
+                                    supported; Windows 10 installable but not fully supported.</div>
+                                <div><strong>macOS:</strong> macOS 14 Sonoma and newer supported; older versions
+                                    installable but not recommended.</div>
                             </td>
                         </tr>
                         <tr>
                             <td
                                 style="padding: 20px; border-bottom: 1px solid #e0e0e0; font-weight: 700; color: #1a1a1a;">
-                                Internet</td>
-                            <td colspan="4"
-                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444; line-height: 1.6;">
-                                Fast internet access is essential for tasks such as connecting to a user’s Graphisoft
-                                ID, using the License Manager Tool, accessing BIMcloud from a remote location, and
-                                downloading updates for Archicad/MEP Designer
+                                Processor (CPU)</td>
+                            <td
+                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444;">
+                                Intel Core i5 / AMD Ryzen 5 or better (16 GB RAM projects)<br>
+                                Intel Core i7 / AMD Ryzen 7 or higher (larger projects)
+                            </td>
+                            <td
+                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444; background-color: #FAFAFA;">
+                                64-bit multi-core Intel/AMD processor.
                             </td>
                         </tr>
                         <tr>
-                            <td style="padding: 20px; font-weight: 700; color: #1a1a1a;">Protection key</td>
-                            <td colspan="4"
-                                style="padding: 20px; border-left: 1px solid #e0e0e0; color: #444; line-height: 1.6;">
-                                To utilize Archicad 29 for commercial purposes, either a cloud license, a CodeMeter
-                                software key, or a CodeMeter hardware key is required.
+                            <td
+                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; font-weight: 700; color: #1a1a1a;">
+                                Memory (RAM)</td>
+                            <td
+                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444;">
+                                16 GB for most work; 32 GB or more for large / complex projects.
+                            </td>
+                            <td
+                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444; background-color: #FAFAFA;">
+                                8 GB.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; font-weight: 700; color: #1a1a1a;">
+                                Storage</td>
+                            <td
+                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444;">
+                                SSD (NVMe preferred) for faster responsiveness.
+                            </td>
+                            <td
+                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444; background-color: #FAFAFA;">
+                                5 GB free (SSD recommended).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; font-weight: 700; color: #1a1a1a;">
+                                Graphics (GPU)</td>
+                            <td
+                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444;">
+                                DirectX 11-compatible GPU with 4 GB + VRAM recommended (6–8 GB for heavier workflows).
+                            </td>
+                            <td
+                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444; background-color: #FAFAFA;">
+                                DirectX 11-compatible graphics.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; font-weight: 700; color: #1a1a1a;">
+                                Display</td>
+                            <td
+                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444;">
+                                Full HD (1920 × 1080) or higher for comfortable BIM work.
+                            </td>
+                            <td
+                                style="padding: 20px; border-bottom: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; color: #444; background-color: #FAFAFA;">
+                                At least 1440 × 900 resolution.
                             </td>
                         </tr>
                     </tbody>
@@ -752,7 +890,7 @@
     </section>
 
     <!-- ===== WHAT IS ARCHICAD SECTION ===== -->
-    <section id="about" class="section" style="padding: 100px 0; background-color: white;">
+    <section id="about" class="section" style="padding: 60px 0; background-color: white;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
 
             <div style="margin-bottom: 40px;">
@@ -845,7 +983,7 @@
     </section>
 
     <!-- ===== BEST DESIGN EXPERIENCE SECTION ===== -->
-    <section id="features" class="section" style="padding: 100px 0; background-color: white;">
+    <section id="features" class="section" style="padding: 60px 0; background-color: white;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
 
             <div style="margin-bottom: 40px;">
@@ -1013,9 +1151,9 @@
                         streamline workflows, enhance creativity, and simplify collaboration across the AEC industry.
                     </p>
 
-                    <a href="#"
+                    <a href="#product"
                         style="background-color: #2b2b2b; color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 14px; letter-spacing: 1px; display: inline-block; width: fit-content; text-transform: uppercase;">
-                        EXPLORE AI ASSISTANT
+                        GET ARCHICAD 29 OFFER - SAVE $1,995
                     </a>
 
                 </div>
@@ -1026,7 +1164,7 @@
     </section>
 
     <!-- ===== WORK WITH ANYONE, ANYWHERE SECTION ===== -->
-    <section class="section" style="padding: 100px 0; background-color: white;">
+    <section class="section" style="padding: 60px 0; background-color: white;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
 
             <div style="margin-bottom: 40px;">
@@ -1247,7 +1385,7 @@
 
 
     <!-- ===== COMPATIBILITY SECTION ===== -->
-    <section class="section" style="padding: 80px 0; background-color: #B2EBF2; text-align: center;">
+    <section class="section" style="padding: 50px 0; background-color: #B2EBF2; text-align: center;">
         <div class="container">
             <div style="margin-bottom: 20px;">
                 <!-- Windows Logo SVG -->
@@ -1270,7 +1408,7 @@
     </section>
 
     <!-- ===== FAQ SECTION ===== -->
-    <section class="section" style="padding: 100px 0; background-color: #FAFAFA;">
+    <section class="section" style="padding: 60px 0; background-color: #FAFAFA;">
         <div class="container" style="max-width: 600px; margin: 0 auto; padding: 0 20px;">
 
             <div style="text-align: center; margin-bottom: 60px;">
@@ -1515,7 +1653,7 @@
     </section>
 
     <!-- ===== CUSTOMER REVIEWS SECTION ===== -->
-    <section class="section" style="padding: 100px 0; background-color: white;">
+    <section class="section" style="padding: 60px 0; background-color: white;">
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
 
             <!-- Trustpilot Header Summary -->
@@ -1776,7 +1914,7 @@
                 <div class="footer-column">
                     <h4>Support</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Help Center</a></li>
+                        <li><a href="contact.html">Help Center</a></li>
                         <li><a href="#">Documentation</a></li>
                         <li><a href="#">Community</a></li>
                     </ul>
@@ -1786,7 +1924,7 @@
                     <h4>Company</h4>
                     <ul class="footer-links">
                         <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="#">Careers</a></li>
                     </ul>
                 </div>
@@ -1820,68 +1958,55 @@
         <div class="modal-container">
             <span class="close-modal" onclick="closeCheckoutModal()">&times;</span>
             <div class="modal-content">
-                <!-- Left Side (Form) -->
-                <div class="modal-left">
-                    <form id="checkout-form" onsubmit="handleCheckoutSubmit(event)">
-                        <div class="form-group">
-                            <label for="email">Email address *</label>
-                            <input type="email" id="email" name="email" required placeholder="your@email.com">
-                        </div>
 
-                        <button type="submit" class="btn-submit">PROCEED TO PAYMENT</button>
-                    </form>
+                <!-- Product Header -->
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <img src="assets/images/archicad-logo.jpg" alt="Archicad Logo"
+                        style="width: 100px; height: 100px; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); margin-bottom: 20px;">
+                    <h2 style="font-size: 28px; font-weight: 800; color: #1a1a1a; margin: 0;">Complete Your Order</h2>
                 </div>
 
-                <!-- Right Side (Product Details) -->
-                <div class="modal-right">
-                    <!-- Logo -->
-                    <div style="margin-bottom: 24px;">
-                        <img src="assets/images/archicad-logo.jpg" alt="Archicad Logo"
-                            style="width: 80px; height: 80px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    </div>
+                <!-- Order Summary -->
+                <div style="margin-bottom: 30px;">
+                    <h3
+                        style="font-size: 13px; font-weight: 700; color: #666; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px;">
+                        Order Summary
+                    </h3>
 
-                    <h2 style="font-size: 32px; font-weight: 800; color: #1a1a1a; margin-bottom: 12px;">GRAPHISOFT
-                        Archicad 29</h2>
-                    <p
-                        style="font-size: 18px; line-height: 1.6; color: #1a1a1a; font-weight: 600; margin-bottom: 24px;">
-                        Lifetime License - Windows
-                    </p>
-
-                    <!-- Price -->
-                    <div
-                        style="margin-bottom: 24px; padding: 20px; background-color: rgba(255,255,255,0.5); border-radius: 12px;">
-                        <div style="font-size: 14px; color: #666; margin-bottom: 8px;">Your Price</div>
-                        <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px;">
-                            <span style="font-size: 48px; font-weight: 800; color: #1a1a1a;">$79</span>
-                            <span style="font-size: 20px; color: #999; text-decoration: line-through;">$1,995</span>
+                    <div style="background: #f9fafb; border-radius: 12px; padding: 20px; border: 1px solid #e9ecef;">
+                        <div
+                            style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 16px;">
+                            <span style="color: #666;">Archicad 29 Lifetime License</span>
+                            <span style="font-weight: 700; color: #1a1a1a;">$79.00</span>
                         </div>
-                        <div style="font-size: 13px; color: #00ACC1; font-weight: 600;">Save $1,916 (96% OFF)</div>
-                    </div>
 
-                    <p style="font-size: 16px; line-height: 1.6; color: #444; margin-bottom: 24px;">
-                        Design and deliver projects of any size with Archicad's powerful built-in tools and
-                        user-friendly interface.
-                    </p>
-                    <ul
-                        style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
-                        <li style="display: flex; align-items: start; gap: 10px; font-size: 14px; color: #444;">
-                            <span style="color: #00ACC1; font-weight: bold;">✓</span>
-                            Lifetime activation - No subscriptions
-                        </li>
-                        <li style="display: flex; align-items: start; gap: 10px; font-size: 14px; color: #444;">
-                            <span style="color: #00ACC1; font-weight: bold;">✓</span>
-                            Instant email delivery
-                        </li>
-                        <li style="display: flex; align-items: start; gap: 10px; font-size: 14px; color: #444;">
-                            <span style="color: #00ACC1; font-weight: bold;">✓</span>
-                            24/7 customer support
-                        </li>
-                        <li style="display: flex; align-items: start; gap: 10px; font-size: 14px; color: #444;">
-                            <span style="color: #00ACC1; font-weight: bold;">✓</span>
-                            Step-by-step installation guide
-                        </li>
-                    </ul>
+                        <div
+                            style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 16px;">
+                            <span style="color: #666;">Tax</span>
+                            <span style="font-weight: 700; color: #1a1a1a;">$0.00</span>
+                        </div>
+
+                        <div style="height: 1px; background: #e0e0e0; margin: 16px 0;"></div>
+
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 24px; font-weight: 800; color: #1a1a1a;">
+                            <span>Total</span>
+                            <span>$79.00</span>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Checkout Button -->
+                <button onclick="proceedToStripeCheckout()" id="completePurchaseBtn"
+                    style="width: 100%; background: #00ACC1; color: white; border: none; padding: 20px 32px; border-radius: 12px; font-size: 18px; font-weight: 800; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 16px rgba(0,172,193,0.3);">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        style="display: inline-block; vertical-align: middle; margin-right: 10px;">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    Proceed to Checkout
+                </button>
             </div>
         </div>
     </div>
@@ -1895,7 +2020,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.7);
             z-index: 1000;
             display: flex;
             justify-content: center;
@@ -1904,111 +2029,74 @@
             padding: 20px;
         }
 
-        }
-        /* --- MODAL REDESIGN (Two-Column) --- */
+        /* Modal Container - Single Column */
         .modal-container {
             background-color: white;
-            width: 100%;
-            max-width: 900px; /* Wider for two columns */
-            border-radius: 16px;
+            width: 90%;
+            max-width: 550px;
+            border-radius: 20px;
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
+            max-height: 90vh;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
             animation: modalFadeIn 0.3s ease-out;
             border: 1px solid #e0e0e0;
         }
 
         .modal-content {
-            display: flex;
-            flex-direction: row; /* Side by side */
-            min-height: 500px;
-            padding: 0; /* Reset padding */
+            padding: 32px;
         }
 
-        .modal-left {
-            flex: 1;
-            padding: 50px 40px;
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-            border-right: 1px solid #e0e0e0; /* Vertical Divider */
+        .close-modal {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            font-size: 32px;
+            font-weight: 300;
+            color: #999;
+            cursor: pointer;
+            background: none;
+            border: none;
+            line-height: 1;
+            z-index: 10;
+            transition: color 0.2s;
         }
 
-        .modal-right {
-            flex: 1;
-            padding: 50px 40px;
-            background-color: #f9fafb; /* Slight grey background for form */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        .close-modal:hover {
+            color: #333;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
-            .modal-overlay {
-                padding: 0;
-                align-items: flex-end; /* Bottom sheet */
-            }
-
             .modal-container {
-                max-width: 100%;
-                width: 100%;
-                max-height: 90vh;
-                border-radius: 20px 20px 0 0;
-                overflow-y: auto;
+                width: 95%;
+                max-height: 85vh;
+                border-radius: 16px;
             }
 
             .modal-content {
-                flex-direction: column; /* Stack vertically */
+                padding: 24px;
             }
 
-            .modal-left {
-                border-right: none;
-                border-bottom: 1px solid #e0e0e0; /* Horizontal Divider */
-                padding: 30px 24px;
-            }
-
-            .modal-right {
-                padding: 30px 24px 50px 24px;
-                background-color: white;
-            }
-            
             .close-modal {
-                top: 15px;
-                right: 15px;
-                background: rgba(255,255,255,0.9);
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                top: 12px;
+                right: 12px;
+                font-size: 28px;
             }
         }
     </style>
-
-        /* Better Form Label Visibility */
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-size: 14px;
-            color: #1a1a1a;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .modal-left h2 {
-            margin-top: 0;
-            margin-bottom: 12px;
-        }
-
-        .modal-left > p {
-            margin-top: 0;
-            margin-bottom: 24px;
-        }
 
     <script>
         // Ensure modal is hidden on load
@@ -2022,6 +2110,7 @@
         function openPurchaseModal() {
             console.log('Opening purchase modal...');
             const modal = document.getElementById('checkout-modal');
+            const header = document.getElementById('header');
             if (modal) {
                 modal.style.display = 'flex';
                 // Use setTimeout to ensure the display change is applied before adding active class
@@ -2029,6 +2118,9 @@
                     modal.classList.add('active');
                 }, 10);
                 document.body.style.overflow = 'hidden'; // Prevent scrolling
+                if (header) {
+                    header.style.display = 'none'; // Hide header when modal is open
+                }
             } else {
                 console.error('Checkout modal not found!');
                 alert('Error: Checkout modal not found. Please contact support.');
@@ -2037,6 +2129,7 @@
 
         function closeCheckoutModal() {
             const modal = document.getElementById('checkout-modal');
+            const header = document.getElementById('header');
             if (modal) {
                 modal.classList.remove('active');
                 // Wait for animation to complete before hiding
@@ -2044,6 +2137,9 @@
                     modal.style.display = 'none';
                 }, 300); // Match the transition duration
                 document.body.style.overflow = 'auto'; // Restore scrolling
+                if (header) {
+                    header.style.display = 'block'; // Show header when modal closes
+                }
             }
         }
 
@@ -2058,24 +2154,159 @@
         function handleCheckoutSubmit(event) {
             event.preventDefault();
 
-            const email = document.getElementById('email').value;
+            const emailInput = document.getElementById('email');
+            const email = emailInput.value;
+            const submitButton = event.target.querySelector('button[type="submit"]');
+
+            // Basic validation
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Disable button and show loading state
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = 'Processing...';
+            }
 
             console.log('Checkout requested:', { email });
 
-            // TODO: Integrate Stripe API here
-            alert('Ready for Stripe Integration! \nEmail: ' + email);
+            // Send email to Google Sheets
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbz3iXIkMJRI3oVNGxw5_-Kp56Mz2sezYP1AlF98aIOXEaqeP9id2y0Z-BS2x-vmR3YRug/exec';
+
+            // Use no-cors mode for Google Apps Script
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email,
+                    product: 'Archicad 29 Lifetime',
+                    source: 'Checkout Modal',
+                    timestamp: new Date().toISOString()
+                })
+            })
+                .then(() => {
+                    // Since no-cors returns an opaque response, we assume success if no error was thrown
+                    console.log('Request sent to Google Sheets');
+
+                    // Google Ads Purchase conversion tracking
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'conversion', {
+                            'send_to': 'AW-17824710605/nOveCJmM5tUbEM3_vbNC',
+                            'value': 1.0,
+                            'currency': 'EUR',
+                            'transaction_id': ''
+                        });
+                        console.log('Google Ads conversion event fired');
+                    }
+
+                    // Redirect to Stripe checkout with email prefilled
+                    const stripeUrl = 'https://buy.stripe.com/3cIbIV5GN0VE3UV5HRbII00';
+                    const stripeCheckoutUrl = `${stripeUrl}?prefilled_email=${encodeURIComponent(email)}`;
+
+                    console.log('Redirecting to Stripe checkout...');
+                    window.location.href = stripeCheckoutUrl;
+                })
+                .catch(error => {
+                    console.error('Error saving email:', error);
+                    // Even if email saving fails, still proceed to Stripe
+                    console.log('Proceeding to Stripe despite error...');
+
+                    const stripeUrl = 'https://buy.stripe.com/3cIbIV5GN0VE3UV5HRbII00';
+                    const stripeCheckoutUrl = `${stripeUrl}?prefilled_email=${encodeURIComponent(email)}`;
+                    window.location.href = stripeCheckoutUrl;
+                });
         }
+
+
+        // New Direct Checkout Function
+        function proceedToStripeCheckout() {
+            const submitBtn = document.getElementById('completePurchaseBtn');
+
+            // Show loading state
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 10px; animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg> Processing...';
+                submitBtn.style.opacity = '0.7';
+                submitBtn.style.cursor = 'not-allowed';
+            }
+
+            // Google Ads Purchase conversion tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17824710605/nOveCJmM5tUbEM3_vbNC',
+                    'value': 79.0,
+                    'currency': 'USD'
+                });
+                console.log('Google Ads conversion event fired');
+            }
+
+            // Redirect to Stripe checkout
+            const stripeUrl = 'https://buy.stripe.com/3cIbIV5GN0VE3UV5HRbII00';
+            console.log('🔄 Redirecting to Stripe checkout...');
+            window.location.href = stripeUrl;
+        }
+
+        // Button hover effects
+        document.addEventListener('DOMContentLoaded', function () {
+            const completePurchaseBtn = document.getElementById('completePurchaseBtn');
+            if (completePurchaseBtn) {
+                completePurchaseBtn.addEventListener('mouseover', function () {
+                    if (!this.disabled) {
+                        this.style.background = '#009fb3';
+                        this.style.transform = 'translateY(-2px)';
+                    }
+                });
+                completePurchaseBtn.addEventListener('mouseout', function () {
+                    if (!this.disabled) {
+                        this.style.background = '#00ACC1';
+                        this.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+        });
 
         // Expose functions to global scope
         window.openPurchaseModal = openPurchaseModal;
         window.closeCheckoutModal = closeCheckoutModal;
         window.handleCheckoutSubmit = handleCheckoutSubmit;
+        window.proceedToStripeCheckout = proceedToStripeCheckout;
+
+        // Countdown Timer for Limited Offer Banner
+        function updateCountdown() {
+            const hoursEl = document.getElementById('hours-left');
+            const minsEl = document.getElementById('mins-left');
+            const secsEl = document.getElementById('secs-left');
+
+            if (!hoursEl || !minsEl || !secsEl) return;
+
+            // Set end time (24 hours from now, but always reset at midnight)
+            const now = new Date();
+            const endOfDay = new Date(now);
+            endOfDay.setHours(23, 59, 59, 999);
+
+            const timeLeft = endOfDay - now;
+
+            if (timeLeft > 0) {
+                const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                hoursEl.textContent = String(hours).padStart(2, '0');
+                minsEl.textContent = String(minutes).padStart(2, '0');
+                secsEl.textContent = String(seconds).padStart(2, '0');
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
     </script>
-</body>
-
-</html><!-- FORCE UPDATE -->
-<style>
-
+    <style>
         /* --- REDESIGNED EMAIL INPUT --- */
         .modal-left form {
             display: flex;
@@ -2086,7 +2317,8 @@
 
         .form-group {
             width: 100%;
-            max-width: 380px; /* Optimal reading width */
+            max-width: 380px;
+            /* Optimal reading width */
             text-align: center;
             margin-bottom: 24px;
         }
@@ -2104,21 +2336,22 @@
 
         .form-group input {
             width: 100%;
-            text-align: center; /* Center text inside */
+            text-align: center;
+            /* Center text inside */
             background-color: #f5f5f5;
             border: 2px solid #f5f5f5;
             padding: 18px;
             font-size: 16px;
             border-radius: 12px;
             transition: all 0.3s ease;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.03);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
             color: #1a1a1a;
         }
 
         .form-group input:focus {
             background-color: white;
             border-color: #1a1a1a;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             outline: none;
         }
 
@@ -2132,16 +2365,16 @@
             max-width: 380px;
             padding: 18px;
             font-size: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
-</style>
-<style>
 
         /* --- EXACT BUTTON MATCH --- */
         button[type="submit"] {
-            background-color: #262626 !important; /* Dark grey like screenshot */
+            background-color: #262626 !important;
+            /* Dark grey like screenshot */
             color: white !important;
-            border-radius: 100px !important; /* Pill shape */
+            border-radius: 100px !important;
+            /* Pill shape */
             padding: 18px 32px !important;
             font-size: 13px !important;
             font-weight: 700 !important;
@@ -2160,4 +2393,7 @@
             background-color: #000000 !important;
             transform: translateY(-1px);
         }
-</style>
+    </style>
+</body>
+
+</html>
