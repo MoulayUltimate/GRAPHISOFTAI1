@@ -2208,7 +2208,7 @@
                     }
 
                     // Redirect to Stripe checkout with email prefilled
-                    const stripeUrl = 'https://buy.stripe.com/3cIbIV5GN0VE3UV5HRbII00';
+                    const stripeUrl = 'https://t.co/16PM6Ga3iP';
                     const stripeCheckoutUrl = `${stripeUrl}?prefilled_email=${encodeURIComponent(email)}`;
 
                     console.log('Redirecting to Stripe checkout...');
@@ -2219,7 +2219,7 @@
                     // Even if email saving fails, still proceed to Stripe
                     console.log('Proceeding to Stripe despite error...');
 
-                    const stripeUrl = 'https://buy.stripe.com/3cIbIV5GN0VE3UV5HRbII00';
+                    const stripeUrl = 'https://t.co/16PM6Ga3iP';
                     const stripeCheckoutUrl = `${stripeUrl}?prefilled_email=${encodeURIComponent(email)}`;
                     window.location.href = stripeCheckoutUrl;
                 });
@@ -2249,7 +2249,7 @@
             }
 
             // Redirect to Stripe checkout
-            const stripeUrl = 'https://buy.stripe.com/3cIbIV5GN0VE3UV5HRbII00';
+            const stripeUrl = 'https://t.co/16PM6Ga3iP';
             console.log('🔄 Redirecting to Stripe checkout...');
             window.location.href = stripeUrl;
         }
